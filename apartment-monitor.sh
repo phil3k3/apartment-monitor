@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 # Read current state
 current=0
@@ -88,7 +89,11 @@ then
 	diff -rq $previous_target/ $target/ > comparison 2>&1
 	if [ -s ./comparison ];
 	then
-		echo Found new apartments
+	    echo Found new apartments
+	    source mail.cfg
+	    echo Sending mail from $sender to $receiver
+	    text=$(<comparison)
+	    python mail.py "$sender" "$receiver" "$text" && echo E-Mail sent successfully
 	else
 		echo No new apartments
 	fi
