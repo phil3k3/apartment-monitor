@@ -24,8 +24,8 @@ curl http://www.egw.at/immobilien/bestands-wohnungen/miete/ > $target/egw_bestan
 curl http://www.egw.at/immobilien/vormerkung-neubau/in-bau/ > $target/egw_bau.html 2>> err.log
 curl http://www.egw.at/immobilien/vormerkung-neubau/in-planung/ > $target/egw_planung.html 2>> err.log
 curl "http://www.heimbau.at/wohnungen?searchcrit=1&zimmer=3&flaeche=0&objecttype=wohnung&search=1" > $target/heimbau.html 2>> err.log
-curl http://www.sozialbau.at/nc/home/suche/neubau-wohnungen/in-bau/ > $target/sozialbau_bau.html  2>> err.log
-curl http://www.sozialbau.at/nc/home/suche/neubau-wohnungen/in-planung/ > $target/sozialbau_planung.html 2>> err.log
+curl http://www.sozialbau.at/nc/home/suche/neubau-wohnungen/in-bau/ | python xpath.py '//tr/td[position()=2]' > $target/sozialbau_bau.html  2>> err.log
+curl http://www.sozialbau.at/nc/home/suche/neubau-wohnungen/in-planung/ | python xpath.py '//tr/td[position()=2]' > $target/sozialbau_planung.html 2>> err.log
 curl "http://www.familienwohnbau.at/immobiliensuche/?nutzungsart=W&verwertung=miete" > $target/familien.html 2>> err.log
 curl 'http://www.frieden.at/umbraco/Surface/ProjectSearch/SearchProjects' --data 'SelectedDistrictIds=21%2C22%2C26%2C27%2C28%2C32%2C35%2C36%2C38%2C42%2C43%2C102%2C113%2C114%2C115&SelectedLivingUnitType=18&SelectedLegalForm=0&Rooms2=false&Rooms3=true&Rooms4=false&RoomsSpecial=false&Available=true&InBau=true&InPlan=true&RequestCount=1' > $target/frieden.html 2>> err.log
 curl http://www.gartenheim.at/projekte.html > $target/gartenheim.html 2>> err.log
@@ -33,8 +33,8 @@ curl 'http://www.gesiba.at/portlets/at.gesiba.portal.web.portlets.GesibaMap/gesi
 curl http://www.gewog-wohnen.at/immobilienangebot/projekte-in-planung/ > $target/gewog_planung.html 2>> err.log
 curl http://www.gewog-wohnen.at/immobilienangebot/projekte-in-bau/ > $target/gewog_bau.html 2>> err.log
 curl 'http://www.gewog-wohnen.at/umbraco/Surface/LivingUnits/Search?Length=11' --data 'Filter.City=&Filter.LegalForm=&Filter.Room=3&Filter.UnitType=&Filter.MonthlyCostTo=&Filter.SquareMeterFrom=&Filter.SquareMeterTo=&X-Requested-With=XMLHttpRequest' > $target/gewog.html 2>> err.log
-curl http://www.gsgwohnen.at/ruecktritt/index.html > $target/gsg.html 2>> err.log
-curl http://www.gsgwohnen.at/projekte/main.html > $target/gsg_projekte.html 2>> err.log
+curl http://www.gsgwohnen.at/sofort-verfuegbar/ > $target/gsg.html 2>> err.log
+curl http://www.gsgwohnen.at/projekte/ > $target/gsg_projekte.html 2>> err.log
 curl http://www.heim-wohnen.at/niederoesterreich/ > $target/heim_wohnen_noe.html 2>> err.log
 curl http://www.heim-wohnen.at/wien/ > $target/heim_wohnen_wien.html 2>> err.log
 curl http://www.wiensued.at/neue-projekte/7.htm > $target/wiensued_neu.html 2>> err.log
@@ -43,7 +43,7 @@ curl http://www.wiensued.at/bestandswohnung/8.htm > $target/wiensued_bestand.htm
 # div id="block-migra-projekte-block-migra-suchergebnis"
 curl 'http://www.migra.at/Wohnungen/Wohnungssuche/Wohnungen-mieten-kaufen?Miete=1&inBau=1&sofort=1&idProviders1=1&size%5Bvalue%5D=10&size%5Bvalue2%5D=200&rooms%5Bvalue%5D=1&rooms%5Bvalue2%5D=5&form_id=migra_projekte_wohnungssuche&email_me=' | python xpath.py '//div[@id="block-migra-projekte-block-migra-suchergebnis"]' > $target/migra.html 2>> err.log
 curl 'https://www.wohnen.at/umbraco/Surface/UnitSearch/Filter' --data 'FilterState.DistrictChecked.Index=0&FilterState.DistrictsChecked%5B0%5D.Id=101&FilterState.DistrictsChecked%5B0%5D.Checked=false&FilterState.DistrictChecked.Index=1&FilterState.DistrictsChecked%5B1%5D.Id=102&FilterState.DistrictsChecked%5B1%5D.Checked=false&FilterState.DistrictChecked.Index=2&FilterState.DistrictsChecked%5B2%5D.Id=113&FilterState.DistrictsChecked%5B2%5D.Checked=false&FilterState.DistrictChecked.Index=3&FilterState.DistrictsChecked%5B3%5D.Id=114&FilterState.DistrictsChecked%5B3%5D.Checked=false&FilterState.DistrictChecked.Index=4&FilterState.DistrictsChecked%5B4%5D.Id=-1&FilterState.DistrictsChecked%5B4%5D.Checked=false&FilterState.IsCompletedChecked=true&FilterState.IsCompletedChecked=false&FilterState.IsInConstructionChecked=true&FilterState.IsInConstructionChecked=false&FilterState.IsPlannedChecked=true&FilterState.IsPlannedChecked=false&FilterState.IsRentalChecked=true&FilterState.IsRentalChecked=false&FilterState.IsOwnershipChecked=false&X-Requested-With=XMLHttpRequest' > $target/wohnen_at.html 2>> err.log
-curl http://www.neusiedlerbau.at/index.php?id=34 > $target/neusiedler.html 2>> err.log
+curl http://www.neusiedlerbau.at/index.php?id=34 | python xpath.py '//div[@id="col1"]' > $target/neusiedler.html 2>> err.log
 curl -H "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36" http://www.wbvgoed.at/in-planung > $target/wbvgoed_planung.html 2>> err.log
 curl -H "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36" http://www.wbvgoed.at/in-bau > $target/wbvgoed_neu.html 2>> err.log
 curl -H "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36" http://www.wbvgoed.at/wohnungen > $target/wbvgoed.html 2>> err.log
