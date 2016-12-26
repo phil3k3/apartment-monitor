@@ -33,8 +33,8 @@ curl 'http://www.gesiba.at/portlets/at.gesiba.portal.web.portlets.GesibaMap/gesi
 curl http://www.gewog-wohnen.at/immobilienangebot/projekte-in-planung/ > $target/gewog_planung.html 2>> err.log
 curl http://www.gewog-wohnen.at/immobilienangebot/projekte-in-bau/ > $target/gewog_bau.html 2>> err.log
 curl 'http://www.gewog-wohnen.at/umbraco/Surface/LivingUnits/Search?Length=11' --data 'Filter.City=&Filter.LegalForm=&Filter.Room=3&Filter.UnitType=&Filter.MonthlyCostTo=&Filter.SquareMeterFrom=&Filter.SquareMeterTo=&X-Requested-With=XMLHttpRequest' > $target/gewog.html 2>> err.log
-curl http://www.gsgwohnen.at/sofort-verfuegbar/ > $target/gsg.html 2>> err.log
-curl http://www.gsgwohnen.at/projekte/ > $target/gsg_projekte.html 2>> err.log
+curl http://www.gsgwohnen.at/sofort-verfuegbar/ | python xpath.py '//article' > $target/gsg.html 2>> err.log
+curl http://www.gsgwohnen.at/projekte/ | python xpath.py '//article' > $target/gsg_projekte.html 2>> err.log
 curl http://www.heim-wohnen.at/niederoesterreich/ > $target/heim_wohnen_noe.html 2>> err.log
 curl http://www.heim-wohnen.at/wien/ > $target/heim_wohnen_wien.html 2>> err.log
 curl http://www.wiensued.at/neue-projekte/7.htm > $target/wiensued_neu.html 2>> err.log
