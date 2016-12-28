@@ -3,8 +3,18 @@ import os
 import pycurl
 import re
 import ast
+from filecmp import dircmp
 
 from io import BytesIO
+from lxml import etree
+
+
+def apply_query(html_content, xpath, encoding):
+    tree = etree.HTML(html_content)
+    result = ""
+    for element in tree.xpath(xpath):
+        result += etree.tostring(element).decode(encoding)
+    return result
 
 
 class CaptureCharset:
@@ -67,13 +77,36 @@ with open('estate_pages.json') as pages_file:
         c.perform()
         print(page['key'] + " " + str(c.getinfo(c.RESPONSE_CODE)))
 
-        with open(os.path.join(target, page['key']), 'w') as target_file:
-            body = buffer.getvalue()
-            charset = capture.charset
-            if 'charset' in page:
-                charset = page['charset']
-            value = body.decode(charset)
-            target_file.write(value)
-
-        c.close()
+        try:
+            with open(os.path.join(target, page['key']), 'w') as target_file:
+                body = buffer.getvalue()
+                charset = capture.charset
+                if 'charset' in page:
+                    charset = page['charset']
+                value = body.decode(charset)
+                if 'query' in page:
+                    value = apply_query(value, page['query'], 'utf-8')
+                target_file.write(value)
+        except Exception as e:
+            print("TEST")
+        finally:
+            c.close()
         print(page['key'] + " written")
+
+with open('./state', 'w') as state:
+    state.write(str(current+1))
+
+
+previous = current - 1
+previous_target = previous % 2
+
+if os.path.isdir(str(previous_target)):
+    print("Comparing current with previous result")
+    print(str(previous_target))
+    print(str(target))
+
+    dcmp = dircmp(str(previous_target), str(target))
+    for name in dcmp.diff_files:
+        print(name)
+else:
+    print("Directory does not exist")
