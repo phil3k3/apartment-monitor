@@ -1,0 +1,241 @@
+{
+  "pages": [
+    {
+      "key": "aufbau_wiedervermietung.html",
+      "url": "http://www.aufbau.at/wohnungen-wiedervermietung.html"
+    },
+    {
+      "key": "aufbau_neu.html",
+      "url": "http://www.aufbau.at/neueProjekte.html"
+    },
+    {
+      "key": "bauhilfe.html",
+      "url": "http://www.bauhilfe.at/html/wo-mi.html",
+      "headers": [
+        "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36"
+      ],
+      "charset": "iso-8859-1"
+    },
+    {
+      "key": "ebg.html",
+      "url": "http://www.ebg-wohnen.at/"
+    },
+    {
+      "key": "bwsg.html",
+      "url": "http://www.bwsg.at/de/objektsuche?state_id=3&unit_type_id=1&ownership%5B%5D=R&surface_from=&surface_until=&rooms_from=3&rooms_until=3&searchtype=quick"
+    },
+    {
+      "key": "ebg_bestand.html",
+      "url": "http://www.ebg-wohnen.at/Suche.aspx?typ=1&zmin=3&zmax=5&art=$1$3$6&rg=$1$6&wa=$0$1"
+    },
+    {
+      "key": "egw_bestand.html",
+      "url": "http://www.egw.at/immobilien/bestands-wohnungen/miete/"
+    },
+    {
+      "key": "egw_bau.html",
+      "url": "http://www.egw.at/immobilien/vormerkung-neubau/in-bau/"
+    },
+    {
+      "key": "egw_planung.html",
+      "url": "http://www.egw.at/immobilien/vormerkung-neubau/in-planung/"
+    },
+    {
+      "key": "heimbau.html",
+      "url": "http://www.heimbau.at/wohnungen?searchcrit=1&zimmer=3&flaeche=0&objecttype=wohnung&search=1"
+    },
+    {
+      "key": "sozialbau_bau.html",
+      "url": "http://www.sozialbau.at/nc/home/suche/neubau-wohnungen/in-bau/",
+      "query": "//tr/td[position()=2]"
+    },
+    {
+      "key": "sozialbau_planung.html",
+      "url": "http://www.sozialbau.at/nc/home/suche/neubau-wohnungen/in-planung/",
+      "query": "//tr/td[position()=2]"
+    },
+    {
+      "key": "familien.html",
+      "url": "http://www.familienwohnbau.at/immobiliensuche/?nutzungsart=W&verwertung=miete"
+    },
+    {
+      "key": "frieden.html",
+      "url": "http://www.frieden.at/umbraco/Surface/ProjectSearch/SearchProjects",
+      "data": "SelectedDistrictIds=21%2C22%2C26%2C27%2C28%2C32%2C35%2C36%2C38%2C42%2C43%2C102%2C113%2C114%2C115&SelectedLivingUnitType=18&SelectedLegalForm=0&Rooms2=false&Rooms3=true&Rooms4=false&RoomsSpecial=false&Available=true&InBau=true&InPlan=true&RequestCount=1"
+    },
+    {
+      "key": "gartenheim.html",
+      "url": "http://www.gartenheim.at/projekte.html"
+    },
+    {
+      "key": "gesiba",
+      "url": "http://www.gesiba.at/portlets/at.gesiba.portal.web.portlets.GesibaMap/gesibamaprpc",
+      "headers": [
+        "Origin: http://www.gesiba.at",
+        "Accept-Encoding: gzip, deflate",
+        "Accept-Language: en-US,en;q=0.8,de;q=0.6",
+        "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36",
+        "Content-Type: text/x-gwt-rpc; charset=UTF-8",
+        "Accept: */*",
+        "X-GWT-Module-Base: http://www.gesiba.at/portlets/at.gesiba.portal.web.portlets.GesibaMap/",
+        "X-GWT-Permutation: 09A8C21C24FE7BE3AE9A9E9417B686B2",
+        "Referer: http://www.gesiba.at/en/angebote"
+      ],
+      "options": {
+        "ENCODING": "gzip, deflate"
+      },
+      "data_binary": "7|0|4|http://www.gesiba.at/portlets/at.gesiba.portal.web.portlets.GesibaMap/|267A7360645A49A60D28AABDA8E2FFF3|at.gesiba.portal.web.portlets.client.maps.GesibaMapRPC|getData|1|2|3|4|0|"
+    },
+    {
+      "key": "gewog_planung.html",
+      "url": "http://www.gewog-wohnen.at/immobilienangebot/projekte-in-planung/"
+    },
+    {
+      "key": "gewog_bau.html",
+      "url": "http://www.gewog-wohnen.at/immobilienangebot/projekte-in-bau/"
+    },
+    {
+      "key": "gewog.html",
+      "url": "http://www.gewog-wohnen.at/umbraco/Surface/LivingUnits/Search?Length=11",
+      "data": "Filter.City=&Filter.LegalForm=&Filter.Room=3&Filter.UnitType=&Filter.MonthlyCostTo=&Filter.SquareMeterFrom=&Filter.SquareMeterTo=&X-Requested-With=XMLHttpRequest"
+    },
+    {
+      "key": "gsg.html",
+      "url": "http://www.gsgwohnen.at/sofort-verfuegbar/",
+      "query": "//article"
+    },
+    {
+      "key": "gsg_projekte.html",
+      "url": "http://www.gsgwohnen.at/projekte/",
+      "query": "//article"
+    },
+    {
+      "key": "heim_wohnen_noe.html",
+      "url": "http://www.heim-wohnen.at/niederoesterreich/"
+    },
+    {
+      "key": "heim_wohnen_wien.html",
+      "url": "http://www.heim-wohnen.at/wien/"
+    },
+    {
+      "key": "wiensued_neu.html",
+      "url": "http://www.wiensued.at/neue-projekte/7.htm"
+    },
+    {
+      "key": "wiensued_bestand.html",
+      "url": "http://www.wiensued.at/bestandswohnung/8.htm"
+    },
+    {
+      "key": "migra.html",
+      "url": "http://www.migra.at/Wohnungen/Wohnungssuche/Wohnungen-mieten-kaufen?Miete=1&inBau=1&sofort=1&idProviders1=1&size%5Bvalue%5D=10&size%5Bvalue2%5D=200&rooms%5Bvalue%5D=1&rooms%5Bvalue2%5D=5&form_id=migra_projekte_wohnungssuche&email_me=",
+      "query": "//div[@id='block-migra-projekte-block-migra-suchergebnis']"
+    },
+    {
+      "key": "wohnen_at.html",
+      "url": "https://www.wohnen.at/umbraco/Surface/UnitSearch/Filter",
+      "data": "FilterState.DistrictChecked.Index=0&FilterState.DistrictsChecked%5B0%5D.Id=101&FilterState.DistrictsChecked%5B0%5D.Checked=false&FilterState.DistrictChecked.Index=1&FilterState.DistrictsChecked%5B1%5D.Id=102&FilterState.DistrictsChecked%5B1%5D.Checked=false&FilterState.DistrictChecked.Index=2&FilterState.DistrictsChecked%5B2%5D.Id=113&FilterState.DistrictsChecked%5B2%5D.Checked=false&FilterState.DistrictChecked.Index=3&FilterState.DistrictsChecked%5B3%5D.Id=114&FilterState.DistrictsChecked%5B3%5D.Checked=false&FilterState.DistrictChecked.Index=4&FilterState.DistrictsChecked%5B4%5D.Id=-1&FilterState.DistrictsChecked%5B4%5D.Checked=false&FilterState.IsCompletedChecked=true&FilterState.IsCompletedChecked=false&FilterState.IsInConstructionChecked=true&FilterState.IsInConstructionChecked=false&FilterState.IsPlannedChecked=true&FilterState.IsPlannedChecked=false&FilterState.IsRentalChecked=true&FilterState.IsRentalChecked=false&FilterState.IsOwnershipChecked=false&X-Requested-With=XMLHttpRequest"
+    },
+    {
+      "key": "wbvgoed_planung.html",
+      "url": "http://www.wbvgoed.at/in-planung",
+      "headers": [
+        "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36"
+      ]
+    },
+    {
+      "key": "wbvgoed_neu.html",
+      "url": "http://www.wbvgoed.at/in-bau",
+      "headers": [
+        "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36"
+      ]
+    },
+    {
+      "key": "wbvgoed.html",
+      "url": "http://www.wbvgoed.at/wohnungen",
+      "headers": [
+        "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36"
+      ]
+    },
+    {
+      "key": "oesw.html",
+      "url": "http://www.oesw.at/immobilienangebot/sofort-wohnen/wohnungsliste.html",
+      "data": "_Q_MIETE_WE=2&_Q_Zimmer_3=%3D3&_Q_GroesseQm=&_Q_GroesseQmmin=&_Q_GroesseQmmax=&mode=1&clear=1"
+    },
+    {
+      "key": "oesw_bau.html",
+      "url": "http://www.oesw.at/immobilienangebot/in-bau.html?pos=0"
+    },
+    {
+      "key": "oesw_planung.html",
+      "url": "http://www.oesw.at/immobilienangebot/in-planung.html?pos=0"
+    },
+    {
+      "key": "wbv_gpa.html",
+      "url": "http://www.wbv-gpa.at/angebot/freie-wohnungen"
+    },
+    {
+      "key": "wbv_gpa_neu.html",
+      "url": "http://www.wbv-gpa.at/angebot/neue-projekte"
+    },
+    {
+      "key": "schwarzatal_neu.html",
+      "url": "http://www.schwarzatal.at/projekte/neubau.html",
+      "query": "//div[@id='content']"
+    },
+    {
+      "key": "schwarzatal_geplant.html",
+      "url": "http://www.schwarzatal.at/projekte/geplant.html",
+      "query": "//div[@id='content']"
+    },
+    {
+      "key": "schwarzatal_frei.html",
+      "url": "http://www.schwarzatal.at/projekte/freie-wohnungen.html",
+      "query": "//div[@id='content']"
+    },
+    {
+      "key": "siedlungsunion.html",
+      "url": "http://www.siedlungsunion.at/wohnen/sofort"
+    },
+    {
+      "key": "siedlungsunion_bau.html",
+      "url": "http://www.siedlungsunion.at/wohnen/inbau"
+    },
+    {
+      "key": "siedlungsunion_planung.html",
+      "url": "http://www.siedlungsunion.at/wohnen/inplanung"
+    },
+    {
+      "key": "ebsg.html",
+      "url": "https://www.ebsg.at/neues-zuhause-finden/objektsuche/wohnung_in_planung+wohnung_in_bau+wohnung_bezugsfertig/zimmer_min/3/zimmer_max/5.html",
+      "query": "//div[@id='ebsg_result_listing_box']"
+    },
+    {
+      "key": "oevw1.html",
+      "url": "https://www.oevw.at/wohnungen/",
+      "options": {
+        "FOLLOWLOCATION": "True"
+      },
+      "data": "objektart2=w&projektart2=n&sofortbezug=n&objektart=m",
+      "query": "//h1[@class='search']"
+    },
+    {
+      "key": "oevw2.html",
+      "url": "https://www.oevw.at/wohnungen/",
+      "options": {
+        "FOLLOWLOCATION": "True"
+      },
+      "data": "objektart2=w&projektart2=r",
+      "query": "//h1[@class='search']"
+    },
+    {
+      "key": "noe.json",
+      "url": "http://www.noe-wohnbaugruppe.at/server/api/search/get/queryNew?json=",
+      "headers": [
+        "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36",
+        "Content-Type: application/json; charset=UTF-8",
+        "Accept: application/json, text/javascript, */*; q=0.01"
+      ],
+      "data_binary": "{\"village\":\"\",\"district\":\"\",\"postalcode\":0,\"sizeFrom\":0,\"sizeTo\":2147483647,\"roomsFrom\":3,\"roomsTo\":2147483647,\"monthlyCostsFrom\":0,\"monthlyCostsTo\":2147483647,\"ownFundsFrom\":0,\"ownFundsTo\":2147483647,\"feature\":[],\"estateType\":\"\",\"contractType\":\"\",\"neighbourhood\":\"\"}"
+    }
+  ]
+}

@@ -19,7 +19,7 @@ curl http://www.aufbau.at/neueProjekte.html > $target/aufbau_neu.html 2>> err.lo
 curl http://www.bauhilfe.at/html/wo-mi.html > $target/bauhilfe.html 2>> err.log
 curl http://www.ebg-wohnen.at/ > $target/ebg.html 2>> err.log
 curl "http://www.bwsg.at/de/objektsuche?state_id=3&unit_type_id=1&ownership%5B%5D=R&surface_from=&surface_until=&rooms_from=3&rooms_until=3&searchtype=quick" > $target/bwsg.html 2>> err.log
-curl "http://www.ebg-wohnen.at/Suche.aspx?typ=1&zmin=3&zmax=5&art=$1$3$6&rg=$1$6&wa=$0$1" > $target/ebg.html 2>> err.log
+curl "http://www.ebg-wohnen.at/Suche.aspx?typ=1&zmin=3&zmax=5&art=$1$3$6&rg=$1$6&wa=$0$1" > $target/ebg_bestand.html 2>> err.log
 curl http://www.egw.at/immobilien/bestands-wohnungen/miete/ > $target/egw_bestand.html 2>> err.log
 curl http://www.egw.at/immobilien/vormerkung-neubau/in-bau/ > $target/egw_bau.html 2>> err.log
 curl http://www.egw.at/immobilien/vormerkung-neubau/in-planung/ > $target/egw_planung.html 2>> err.log
