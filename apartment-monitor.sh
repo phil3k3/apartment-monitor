@@ -51,6 +51,7 @@ curl 'http://www.oesw.at/immobilienangebot/sofort-wohnen/wohnungsliste.html' --d
 curl http://www.oesw.at/immobilienangebot/in-bau.html?pos=0 > $target/oesw_bau.html 2>> err.log
 curl http://www.oesw.at/immobilienangebot/in-planung.html?pos=0 > $target/oesw_planung.html 2>> err.log
 curl http://www.wbv-gpa.at/angebot/freie-wohnungen > $target/wbv_gpa.html 2>> err.log
+curl http://www.wbv-gpa.at/angebot/neue-projekte > $target/wbv_gpa_neu.html 2>> err.log
 # div id="content"
 curl http://www.schwarzatal.at/projekte/neubau.html | python xpath.py '//div[@id="content"]' > $target/schwarzatal_neu.html 2>> err.log
 # div id="content"
