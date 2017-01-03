@@ -41,10 +41,7 @@ def get_credentials():
     if not credentials or credentials.invalid:
         flow = client.flow_from_clientsecrets(CLIENT_SECRET_FILE, SCOPES)
         flow.user_agent = APPLICATION_NAME
-        if flags:
-            credentials = tools.run_flow(flow, store, flags)
-        else:  # Needed only for compatibility with Python 2.6
-            credentials = tools.run(flow, store)
+        credentials = tools.run_flow(flow, store)
         print('Storing credentials to ' + credential_path)
     return credentials
 
@@ -66,7 +63,7 @@ def send_message(service, user_id, message):
                    .execute())
         print('Message Id: %s' % message['id'])
         return message
-    except errors.HttpError, error:
+    except errors.HttpError as error:
         print('An error occurred: %s' % error)
 
 
@@ -86,10 +83,12 @@ def create_message(sender, to, subject, message_text):
     message['to'] = to
     message['from'] = sender
     message['subject'] = subject
-    return {'raw': base64.urlsafe_b64encode(message.as_string())}
+    raw = base64.urlsafe_b64encode(message.as_bytes())
+    raw = raw.decode()
+    return {'raw': raw}
 
 
-def main():
+def main(sender, to, title, text):
     """Shows basic usage of the Gmail API.
 
     Creates a Gmail API service object and outputs a list of label names
@@ -99,8 +98,8 @@ def main():
     http = credentials.authorize(httplib2.Http())
     service = discovery.build('gmail', 'v1', http=http)
 
-    send_message(service, "me", create_message(sys.argv[1], sys.argv[2], "New Apartments", sys.argv[3]))
+    send_message(service, "me", create_message(sender, to, title, text))
 
 
 if __name__ == '__main__':
-    main()
+    main(sys.argv[1], sys.argv[2], "New Apartments", sys.argv[3])
