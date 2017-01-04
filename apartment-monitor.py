@@ -1,9 +1,14 @@
+import difflib
 import json
 import os
 import pycurl
 import re
 import ast
+import traceback
 from filecmp import dircmp
+
+import sys
+
 import mail
 
 from io import BytesIO
@@ -78,7 +83,14 @@ with open('estate_pages.json') as pages_file:
         if 'headers' in page:
             c.setopt(c.HTTPHEADER, page['headers'])
 
-        c.perform()
+        try:
+            c.perform()
+        except:
+            exc_type, exc_value, exc_traceback = sys.exc_info()
+            lines = traceback.format_exception(exc_type, exc_value, exc_traceback)
+            print(''.join('!! ' + line for line in lines))
+            continue
+
         print(page['key'] + " " + str(c.getinfo(c.RESPONSE_CODE)))
 
         try:
@@ -116,7 +128,15 @@ if os.path.isdir(str(previous_target)):
 
         text = ""
         for name in result.diff_files:
-            text += page_dict[name] + " changed"
+            text += "\nESTATE PAGE " + page_dict[name] + " CHANGED\n"
+            with open(os.path.join(str(previous_target), name)) as old_file:
+                with open(os.path.join(str(target), name)) as new_file:
+                    old = old_file.readlines()
+                    new = new_file.readlines()
+                    diff = difflib.unified_diff(old, new, "previous", "current")
+                    for line in diff:
+                        text += line + "\n"
+
         mail.main(mail_config['sender'], mail_config['receiver'], subject, text)
         print("E-Mail sent successfully")
     else:
