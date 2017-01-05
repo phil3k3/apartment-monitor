@@ -20,6 +20,11 @@ Create a file mail.json and configure the sender and receiver of the E-Mails:
 
 You can then use any scheduler (i.e. cron) to regularly call the apartment-monitor.   
 
+## Dependencies
+
+httplib2
+google-api-python-client
+
 ## Adding estate pages
 
 To add new pages, simply edit the estate_pages.json. Currently the following fields are required:
