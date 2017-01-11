@@ -210,6 +210,18 @@
       "query": "//div[@id='ebsg_result_listing_box']"
     },
     {
+      "key": "oevw2.html",
+      "url": "https://www.oevw.at/projekte/"
+    },
+    {
+      "key": "oevw3.html",
+      "url": "https://www.oevw.at/projekte/status/ankundigung/"
+    },
+    {
+      "key": "oevw4.html",
+      "url": "https://www.oevw.at/projekte/status/planung/"
+    },
+    {
       "key": "oevw1.html",
       "url": "https://www.oevw.at/wohnungen/",
       "options": {
