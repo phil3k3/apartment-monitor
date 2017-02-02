@@ -129,13 +129,6 @@ if os.path.isdir(str(previous_target)):
         text = ""
         for name in result.diff_files:
             text += "\nESTATE PAGE " + page_dict[name] + " CHANGED\n"
-            with open(os.path.join(str(previous_target), name)) as old_file:
-                with open(os.path.join(str(target), name)) as new_file:
-                    old = old_file.readlines()
-                    new = new_file.readlines()
-                    diff = difflib.unified_diff(old, new, "previous", "current")
-                    for line in diff:
-                        text += line + "\n"
 
         mail.main(mail_config['sender'], mail_config['receiver'], subject, text)
         print("E-Mail sent successfully")
